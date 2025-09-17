@@ -1,5 +1,7 @@
-package com.gaming.gamingsystem;
+package com.gaming.gamingsystem.controllers;
 
+import com.gaming.gamingsystem.entities.Game;
+import com.gaming.gamingsystem.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,7 +31,7 @@ public class GameController {
     // Get game by ID
     @GetMapping("/{id}")
     public Game findById(@PathVariable String id) {
-        return repo.findById(id).orElse(null);
+        return repo.findById(id).orElse(null); // ✅ Removed ObjectId
     }
 
     // Update a game

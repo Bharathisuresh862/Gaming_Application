@@ -1,4 +1,4 @@
-package com.gaming.gamingsystem;
+package com.gaming.gamingsystem.entities;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class Game {
 
     @Id
-    private String id;
+    private String id;   // Using String for MongoDB IDs
 
     private String name;
     private String description;
@@ -25,7 +25,7 @@ public class Game {
     @Field("player_count")
     private int playerCount;
 
-    // Getters and Setters — CORRECT JavaBean naming
+    // ✅ Getters and Setters
 
     public String getId() {
         return id;
